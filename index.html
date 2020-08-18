@@ -54,7 +54,7 @@
             </div>
             <!-- === Simple results === -->
             <div class="d-flex justify-content-center">
-                <div class="lyrics-tytle">
+                <div id="lyrics-tytle">
                     <p class="author lead"><strong>Purple Noon</strong> Album by <span>Washed Out</span> <button
                             class="btn btn-success">Get Lyrics</button></p>
                     <p class="author lead"><strong>Purple Noon</strong> Album by <span>Washed Out</span> <button
@@ -91,17 +91,14 @@
             fetch('https://api.lyrics.ovh/suggest/'+inputField+'')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 const songTitle = document.getElementById('title').innerText = data.data[0].artist.name+ " / " +data.data[0].title;
                 document.getElementById('input').value = "";
                 fetch('https://api.lyrics.ovh/v1/'+songTitle+'')
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data.lyrics)
                     document.getElementById('lyrics').innerText = data.lyrics;
                 })
             })
-            
         })
     </script>
 

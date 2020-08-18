@@ -38,6 +38,6 @@ body{
     background: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
 }
-.lyrics-tytle {
+#lyrics-tytle {
     display: none;
 }
