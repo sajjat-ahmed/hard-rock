@@ -92,9 +92,9 @@
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                const songTitle = document.getElementById('title').innerText = data.data[0].title+ " / " +data.data[0].artist.name;
+                const songTitle = document.getElementById('title').innerText = data.data[0].artist.name+ " / " +data.data[0].title;
                 document.getElementById('input').value = "";
-                fetch('https://private-44fdb-lyricsovh.apiary-mock.com/v1/Coldplay/Adventure of a Lifetime')
+                fetch('https://api.lyrics.ovh/v1/'+songTitle+'')
                 .then(res => res.json())
                 .then(data => {
                     console.log(data.lyrics)
@@ -104,10 +104,10 @@
             
         })
 
-        fetch('https://private-44fdb-lyricsovh.apiary-mock.com/v1/Coldplay/Adventure of a Lifetime')
+        fetch('https://api.lyrics.ovh/v1/Coldplay/Adventure%20of%20a%20Lifetime')
         .then(res => res.json())
         .then(data => {
-            console.log(data.lyrics);
+            console.log(data);
         })
     </script>
 
